@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+/* REM = Root EM */
+
+:root{
+	--cor01: #fff;
+	--cor02: #ECE9FD; /* bg geral */
+	--cor03: #7158EF; /* primeiro <p> */
+	--cor04: #090039; /* h1, li, span de li, <a> */
+	--cor05: #0a0039a3; /* segundo <p> */
+	--cor06: #fff;
+	--cor07: #fff;
+	--cor08: #fff;
+	--cor09: #fff;
+	--cor10: #fff;
+	--fonte01: 'Epilogue', sans-serif;
+
+	/*  1 rem = 16px NATIVAMENTE no browser */
+	/* 40px / 16px = 2.5rem */
+	/* 48px / 16px = 3rem */
+
+	/* TIP: aplicar no :root "font-size: 62.5%", que muda de 16px, o padrão, para 10px e fica mais fácil converter todas as medidas de px para rem(dividindo por 10) */
+
+	font-size: 62.5%; /* (10px) */
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	height: 100vh;
+	height: 100svh;
+	height: 100dvh;
+	background-color: var(--cor02);
+	padding: 6.0rem 2.3rem 6.6rem;
+	font-size: 1.6rem;
+	font-family: var(--fonte01);
+}
+
+main{
+	max-width: 33rem;
+	margin: auto;
+}
+
+h1{
+	font-family: var(--fonte01);
+	font-size: 4.0rem;
+	line-height: 4.8rem;
+	color: var(--cor04);
+	font-weight: 800;
+	margin-bottom: 1.5rem;
+}
+
+ul{
+	list-style: none;
+}
+
+main p:first-child{
+	color: var(--cor03);
+	letter-spacing: 3px; /* unidades mt pequenas (<5px) mantemos em px */
+	text-transform: uppercase;
+	line-height: 3.2rem;
+	margin-bottom: 1.7rem;
+}
+
+h1 + p{
+	color: var(--cor05);
+	line-height: 3.2rem;
+	margin-bottom: 3.2rem;
+
+}
+
+a{
+	color: var(--cor04);
+	text-decoration: none;
+}
+
+a:visited{
+	color: var(--cor04);
+}
+
+a:hover{
+	color: var(--cor03);
+	text-decoration: underline;
+}
+
+ul{
+	margin-top: 7.2rem;
+}
+
+ul li{
+	font-size: 2.4rem;
+	font-weight: 700;
+	line-height: 3.2rem;
+	max-width: 25.7rem;
+	color: var(--cor04);
+	display: flex;
+	align-items: center;
+}
+
+ul li + li {
+	margin-top: 3.2rem;
+}
+
+ul li:first-child{
+	gap: 3.8rem;
+}
+
+ul li:nth-child(2){
+	gap: 2.6rem;
+}
+
+ul li:nth-child(3){
+	gap: 2.5rem;
+}
+
+ul li span{
+	font-size: 7.2rem;
+	font-weight: 800;
+	line-height: 8.0rem;
+	letter-spacing: -2px;
+	color: var(--cor04);
+}
+
+/* Media Queries */
+@media (min-width: 700px){
+	body{
+		padding: 8.0rem;
+	}
+	
+	main{
+		max-width: 1020px; /* limite de width pode ser em fixo em px */
+		display: flex;
+		gap: 10rem;
+	}
+
+	main > div{
+		max-width: 484px;
+	}
+
+	main div h1 + p{
+		margin-top: 3.1rem;
+		margin-bottom: 3.1rem;
+	}
+
+	ul li{
+		max-width: 450px;
+		align-items: center;
+	}
+
+	ul li:first-child{
+		gap: 6.6rem;
+	}
+	
+	ul li:nth-child(2){
+		gap: 5.4rem;
+	}
+	
+	ul li:nth-child(3){
+		gap: 5.3rem;
+	}
+
+}
+
+
